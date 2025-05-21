@@ -18,10 +18,10 @@
         <input type="text" name="loc_prod" placeholder="Localização do produto" required>
       <input type="submit" value="Cadastrar Produto">
     </form>
+<div>
+    <button class= btn_cad onclick="window.location.href='?pagina=home'">Voltar para o Menu Principal</button>
+</div>
 
-        <div class="forgot-password">
-      <a href="#">Esqueceu a senha?</a>
-    </div>
 
 </body>
 </html>

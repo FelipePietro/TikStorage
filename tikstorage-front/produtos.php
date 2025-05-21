@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result) {
         $_SESSION['msg'] = 'Produto cadastrado com sucesso!';
-        header('Location: index.php?pagina=returncad');
+        header('Location: index.php?pagina=cadastro');
         exit;
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($conexao);

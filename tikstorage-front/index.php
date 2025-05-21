@@ -1,36 +1,31 @@
 <?php 
-
-#iniciar sessão
+# Iniciar sessão
 session_start();
 
-#Base de dados
+# Base de dados
 include 'db.php';
 
-#Cabeçalho
+# Cabeçalho
 include 'header.php';
 
+# Verifica se está logado
+if (isset($_SESSION['login'])) {
+    // Verifica qual página será carregada
+    $pagina = $_GET['pagina'] ?? 'teste';
 
-#Conteúdo da página
-
-if(isset($_SESSION['login'])){//se existir um login
-	if(isset($_GET['pagina'])){
-		$pagina = $_GET['pagina'];
-	}
-	else{
-		$pagina = 'teste';
-	}
+    switch ($pagina) {
+        case 'cadastro': 
+            include 'views/cadprod.php'; 
+            break;
+        // Adicione outras páginas seguras aqui
+        default: 
+            include 'views/home.php'; 
+            break;
+    }
+} else {
+    // Usuário não logado, mostra tela de login
+    include 'views/loginpage.php';
 }
 
-else{
-		$pagina = 'home';
-}
-
-switch ($pagina) {
-	case 'returncad': include 'views/cadprod.php'; break;
-	default: include 'views/home.php'; 
-	break;
-}
-
-
-#Rodapé
+# Rodapé
 include 'footer.php';
