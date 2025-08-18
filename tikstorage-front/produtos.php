@@ -15,8 +15,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($conexao, $query);
 
     if ($result) {
-        $_SESSION['msg'] = 'Produto cadastrado com sucesso!';
-        header('Location: index.php?pagina=cadastro');
+        // Exibir mensagem e redirecionar após alguns segundos
+        echo "
+        <html lang='pt-br'>
+        <head>
+            <meta charset='UTF-8'>
+            <title>Cadastro</title>
+            <script>
+                setTimeout(function() {
+                    window.location.href = 'index.php?pagina=tabela';
+                }, 3000); // 3 segundos
+            </script>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    text-align: center;
+                    margin-top: 100px;
+                }
+                .msg {
+                    padding: 15px;
+                    background: #d4edda;
+                    border: 1px solid #c3e6cb;
+                    color: #155724;
+                    display: inline-block;
+                    border-radius: 8px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class='msg'>✅ Produto cadastrado com sucesso!<br>
+            Você será redirecionado em 3 segundos...</div>
+        </body>
+        </html>
+        ";
         exit;
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($conexao);
