@@ -10,7 +10,7 @@
 
   <div class="container">
     <div class="logo">Cadastro de Produtos</div>
-    <form method="post" action="produtos.php">
+    <form method="post" action="add_prod.php">
       <input type="text" name="nm_prod" placeholder="Nome do produto" required>
         <input type="number" name="qndt_prod" placeholder="Quantidade" required>
         <input type="text" name="desc_prod" placeholder="Descrição do produto" required>

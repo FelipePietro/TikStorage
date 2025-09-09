@@ -15,7 +15,10 @@ if (isset($_SESSION['login'])) {
 
     switch ($pagina) {
         case 'cadastro': 
-            include 'views/cadprod.php'; 
+            include 'views/add_prod_page.php'; 
+            break;
+        case 'remover':
+            include 'views/del_prod_page.php';
             break;
         // Adicione outras páginas seguras aqui
         default: 

@@ -32,7 +32,9 @@ $result = mysqli_query($conexao, $sql);
 </div>
 <div class="btn_container">
     <button class= btn onclick="window.location.href='?pagina=cadastro'">Cadastrar Novo Produto</button>
+    <button class= btn onclick="window.location.href='?pagina=remover'">Remover Produto</button>
 </div>
+
 
 </body>
 </html>
