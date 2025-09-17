@@ -18,9 +18,11 @@ if (isset($_SESSION['login'])) {
             include 'views/add_prod_page.php'; 
             break;
         case 'remover':
-            include 'views/del_prod_page.php';
+            include 'del_prod.php';
             break;
-        // Adicione outras páginas seguras aqui
+        case 'atualizar':
+            include 'views/upd_prod_page.php';
+            break;
         default: 
             include 'views/home.php'; 
             break;

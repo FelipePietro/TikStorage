@@ -24,15 +24,16 @@ $result = mysqli_query($conexao, $sql);
 
     while($row = mysqli_fetch_assoc($result)) {
         echo '<div class="card">';
-        echo '<h9>' . $row['nm_prod'] . '</h9>';
+        echo '<h3>' . $row['nm_prod'] . '</h3>';
         echo '<p>ID: ' . $row['id'] . '</p>';
+        echo '<button class="btn_card" onclick="window.location.href=\'del_prod.php?id=' . $row['id'] . '\'">Remover Produto </button>';
+        echo '<button class="btn_card" onclick="window.location.href=\'?pagina=atualizar&id=' . $row['id'] . '\'">Atualizar Produto </button>';
         echo '</div>';
 }
 ?>
 </div>
 <div class="btn_container">
     <button class= btn onclick="window.location.href='?pagina=cadastro'">Cadastrar Novo Produto</button>
-    <button class= btn onclick="window.location.href='?pagina=remover'">Remover Produto</button>
 </div>
 
 
