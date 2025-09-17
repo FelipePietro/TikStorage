@@ -26,8 +26,8 @@ $result = mysqli_query($conexao, $sql);
         echo '<div class="card">';
         echo '<h3>' . $row['nm_prod'] . '</h3>';
         echo '<p>ID: ' . $row['id'] . '</p>';
-        echo '<button class="btn_card" onclick="window.location.href=\'del_prod.php?id=' . $row['id'] . '\'">Remover Produto </button>';
         echo '<button class="btn_card" onclick="window.location.href=\'?pagina=atualizar&id=' . $row['id'] . '\'">Atualizar Produto </button>';
+        echo '<button class="btn_card" onclick="window.location.href=\'del_prod.php?id=' . $row['id'] . '\'">Remover Produto </button>';
         echo '</div>';
 }
 ?>
